@@ -42,7 +42,7 @@ class _IndexPageState extends State<IndexPage> {
                 padding: const EdgeInsets.all(20),
                 child: ElevatedButtonWidget(
                   text: 'Create account',
-                  onPressed: () => {},
+                  onPressed: () => context.go('/register'),
                 ),
               ),
               const Padding(

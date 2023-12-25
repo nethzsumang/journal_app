@@ -57,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                   padding: const EdgeInsets.all(20),
                   child: ElevatedButtonWidget(
-                    text: 'LOGIN',
+                    text: 'Login',
                     onPressed: () => {},
                   )),
             ],
