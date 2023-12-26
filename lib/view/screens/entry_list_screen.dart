@@ -48,7 +48,7 @@ class _EntryListPageState extends State<EntryListPage> {
                   Dismissible(
                     key: Key(entry.entryId.toString()),
                     background: Container(
-                      color: Colors.white,
+                      color: Colors.green,
                       child: const Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
@@ -58,7 +58,7 @@ class _EntryListPageState extends State<EntryListPage> {
                       ),
                     ),
                     secondaryBackground: Container(
-                      color: Colors.white,
+                      color: Colors.red,
                       child: const Align(
                         alignment: Alignment.centerRight,
                         child: Padding(
@@ -67,6 +67,26 @@ class _EntryListPageState extends State<EntryListPage> {
                         ),
                       ),
                     ),
+                    confirmDismiss: (direction) async {
+                      if (direction == DismissDirection.startToEnd) {
+                        setState(() {
+                          // flavors[index] = flavor.copyWith(isFavorite: !flavor.isFavorite);
+                        });
+                        return false;
+                      } else {
+                        bool delete = true;
+                        final snackbarController =
+                            ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: const Text('Deleted entry'),
+                            action: SnackBarAction(
+                                label: 'Undo', onPressed: () => delete = false),
+                          ),
+                        );
+                        await snackbarController.closed;
+                        return delete;
+                      }
+                    },
                     child: ListTile(
                       title: H4TextWidget(text: entry.title),
                       subtitle: Text(entry.content),
