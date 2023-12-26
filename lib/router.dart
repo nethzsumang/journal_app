@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:journal_app/view/screens/add_entry_screen.dart';
 import 'package:journal_app/view/screens/entry_list_screen.dart';
 import 'package:journal_app/view/screens/index_screen.dart';
 import 'package:journal_app/view/screens/login_screen.dart';
@@ -29,6 +30,12 @@ final GoRouter router = GoRouter(
           path: 'dashboard',
           builder: (BuildContext context, GoRouterState state) {
             return const EntryListPage(title: 'Dashboard');
+          },
+        ),
+        GoRoute(
+          path: 'add-entry',
+          builder: (BuildContext context, GoRouterState state) {
+            return const AddEntryPage(title: 'Add Entry');
           },
         ),
       ],

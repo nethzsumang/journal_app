@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:journal_app/models/entry_model.dart';
 import 'package:journal_app/view/widgets/headers/h4_text_widget.dart';
 
@@ -100,7 +101,8 @@ class _EntryListPageState extends State<EntryListPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-          onPressed: () => {}, child: const Icon(Icons.add)),
+          onPressed: () => context.go('/add-entry'),
+          child: const Icon(Icons.add)),
     );
   }
 }
