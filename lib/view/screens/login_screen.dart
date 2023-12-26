@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:journal_app/view/widgets/buttons/elevated_button_widget.dart';
 import 'package:journal_app/view/widgets/headers/h1_text_widget.dart';
 import 'package:journal_app/view/widgets/form/text_field_widget.dart';
@@ -58,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                   padding: const EdgeInsets.all(20),
                   child: ElevatedButtonWidget(
                     text: 'Login',
-                    onPressed: () => {},
+                    onPressed: () => context.go('/dashboard'),
                   )),
             ],
           ),
