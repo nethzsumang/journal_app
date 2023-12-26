@@ -18,6 +18,8 @@ class _EntryListPageState extends State<EntryListPage> {
         title: Text(widget.title),
       ),
       body: const Text('Body Page'),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () => {}, child: const Icon(Icons.add)),
     );
   }
 }
