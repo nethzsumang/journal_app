@@ -13,13 +13,13 @@ mixin _$Entry on EntryBase, Store {
       Atom(name: 'EntryBase.entryList', context: context);
 
   @override
-  List<Entry> get entryList {
+  List<EntryModel> get entryList {
     _$entryListAtom.reportRead();
     return super.entryList;
   }
 
   @override
-  set entryList(List<Entry> value) {
+  set entryList(List<EntryModel> value) {
     _$entryListAtom.reportWrite(value, super.entryList, () {
       super.entryList = value;
     });
